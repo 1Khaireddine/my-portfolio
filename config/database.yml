@@ -1,0 +1,24 @@
+common: &common
+  adapter:  postgresql
+  encoding: unicode
+  username: postgres # OR your username
+  #password: YOUR PASSWORD
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *common
+  database: portfolio_dev # OR your database name
+
+test:
+  <<: *common
+  database: portfolio_test # OR your database name
+  min_messages: WARNING
+
+staging:
+  <<: *common
+  database: portfolio_staging # OR your database name
+
+production:
+  <<: *common
+  database: portfolio_prod # OR your database name
