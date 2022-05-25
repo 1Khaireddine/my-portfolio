@@ -20,5 +20,10 @@ staging:
   database: portfolio_staging # OR your database name
 
 production:
-  <<: *common
-  database: portfolio_prod # OR your database name
+  adapter:  postgresql
+  encoding: unicode
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['USER'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # url: <%= ENV['DATABASE_URL'] %>
