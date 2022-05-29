@@ -51,9 +51,16 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+
+# Web Authentification
+gem "devise", "~> 4.8"
+
 # Use Haml default engine to generate view templates
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'haml', '~> 5.2', '>= 5.2.2'
+
+gem 'activestorage'
+gem 'active_storage_validations'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -77,6 +84,16 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-end
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'api_matchers'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'simplecov', require: false
+  # Factory bot and faker
+  gem 'factory_bot_rails'
+  gem 'faker'
 
-gem "devise", "~> 4.8"
+end
